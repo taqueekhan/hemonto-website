@@ -1,0 +1,19 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+@layer base {
+  html { background:#F4EBDD; color:#4D1821; -webkit-font-smoothing:antialiased; scroll-behavior:smooth; }
+  body { @apply font-sans text-[17px] leading-relaxed; }
+  ::selection { background:#4D1821; color:#F4EBDD; }
+  :focus-visible { outline:2px solid #4D1821; outline-offset:4px; }
+  .on-dark :focus-visible { outline-color:#F4EBDD; }
+  @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto} *{animation-duration:.01ms!important;transition-duration:.01ms!important} }
+}
+@layer components {
+  .display { @apply font-display font-medium tracking-tight leading-[0.95]; }
+  .wrap { @apply mx-auto w-full max-w-[1400px] px-5 md:px-10; }
+  .ulink { background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat; transition:background-size .4s cubic-bezier(.2,.7,.2,1); }
+  .ulink:hover,.ulink:focus-visible { background-size:100% 1px; }
+  .btn { @apply inline-flex items-center justify-center border border-burgundy px-7 py-3.5 text-[15px] font-medium transition-colors duration-300; }
+  .btn-solid { @apply bg-burgundy text-cream hover:bg-burgundy-deep; }
+  .btn-line { @apply text-burgundy hover:bg-burgundy hover:text-cream; }
+  .field { @apply w-full rounded-none border-0 border-b border-burgundy/40 bg-transparent py-3 text-lg outline-none transition-colors focus:border-burgundy placeholder:text-burgundy/40; }
+}
